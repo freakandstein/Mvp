@@ -13,14 +13,22 @@ enum LoginService {
     case login(request: LoginRequest)
 }
 
-extension LoginService: TargetType {
+extension LoginService: TargetType, AccessTokenAuthorizable {
     
     var headers: [String : String]? {
-        return [:]
+        return nil
+    }
+        
+    var authorizationType: AuthorizationType? {
+        switch self {
+        case .login:
+            return .bearer
+        }
     }
     
     var baseURL: URL {
-        return URL(string: "https://dev3-api.development.tastelabgroup.com/api/v1")!
+        let baseURL = URL(string: AppSetting.shared.infoForKey(AppSettingKey.baseURL.value))!
+        return baseURL
     }
 
     var path: String {

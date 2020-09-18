@@ -18,6 +18,7 @@
 		7E5465AE2514E02E00A16612 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5465AD2514E02E00A16612 /* NetworkManager.swift */; };
 		7E5465B12514E04C00A16612 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5465B02514E04C00A16612 /* LoginService.swift */; };
 		7E5465B42514E24300A16612 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5465B32514E24300A16612 /* LoginRequest.swift */; };
+		7E5465DC2514F46900A16612 /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5465DB2514F46900A16612 /* AppSetting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		7E5465AD2514E02E00A16612 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7E5465B02514E04C00A16612 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		7E5465B32514E24300A16612 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		7E5465DB2514F46900A16612 /* AppSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetting.swift; sourceTree = "<group>"; };
 		889F7008B6AA6C547C7D3197 /* Pods-MVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP.debug.xcconfig"; path = "Target Support Files/Pods-MVP/Pods-MVP.debug.xcconfig"; sourceTree = "<group>"; };
 		ED62A0111262FE87112ABF5E /* Pods-MVPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPTests.debug.xcconfig"; path = "Target Support Files/Pods-MVPTests/Pods-MVPTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +117,7 @@
 		7E5465832514DBB000A16612 /* MVP */ = {
 			isa = PBXGroup;
 			children = (
+				7E5465DA2514F44300A16612 /* Common */,
 				7E5465AC2514E00C00A16612 /* Model */,
 				7E5465AB2514E00000A16612 /* Network */,
 				7E5465A62514DCA800A16612 /* Login */,
@@ -156,6 +159,7 @@
 		7E5465AC2514E00C00A16612 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7E5465D92514EB4900A16612 /* Response */,
 				7E5465B22514E22C00A16612 /* Request */,
 			);
 			path = Model;
@@ -175,6 +179,21 @@
 				7E5465B32514E24300A16612 /* LoginRequest.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		7E5465D92514EB4900A16612 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		7E5465DA2514F44300A16612 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7E5465DB2514F46900A16612 /* AppSetting.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +365,7 @@
 			files = (
 				7E5465AE2514E02E00A16612 /* NetworkManager.swift in Sources */,
 				7E5465AA2514DCC500A16612 /* LoginView.swift in Sources */,
+				7E5465DC2514F46900A16612 /* AppSetting.swift in Sources */,
 				7E5465B12514E04C00A16612 /* LoginService.swift in Sources */,
 				7E5465B42514E24300A16612 /* LoginRequest.swift in Sources */,
 				7E5465852514DBB000A16612 /* AppDelegate.swift in Sources */,

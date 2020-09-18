@@ -9,20 +9,23 @@
 import Foundation
 import Moya
 
-public protocol NetworkManagerProtocol: class {
+protocol NetworkManagerProtocol: class {
     func request<T: TargetType, M: Decodable>(target: T, model: M.Type, completion: @escaping (Result<M, Error>) -> Void)
 }
 
-public class Provider: NetworkManagerProtocol {
+class Provider: NetworkManagerProtocol {
     
-    private var provider: MoyaProvider<MultiTarget>
+    private var provider: MoyaProvider<MultiTarget>?
+    private var token: String
     
     init() {
-        self.provider = MoyaProvider<MultiTarget>()
+        token = AppSetting.shared.infoForKey(AppSettingKey.bearerToken.value)
+        let authPlugin = AccessTokenPlugin { [unowned self] _ in self.token  }
+        provider = MoyaProvider<MultiTarget>(plugins: [authPlugin, NetworkLoggerPlugin()])
     }
     
     public func request<T, M>(target: T, model: M.Type, completion: @escaping (Result<M, Error>) -> Void) where T : TargetType, M : Decodable {
-        self.provider.request(MultiTarget(target)) { (result) in
+        self.provider?.request(MultiTarget(target)) { (result) in
             switch result {
             case .success(let response):
                 do {
@@ -39,10 +42,10 @@ public class Provider: NetworkManagerProtocol {
     }
 }
 
-public class NetworkManager {
+class NetworkManager {
     
     public static let shared = NetworkManager()
-    private weak var delegate: NetworkManagerProtocol?
+    private var delegate: NetworkManagerProtocol?
     
     init(networkServiceProtocol: NetworkManagerProtocol = Provider()) {
         self.delegate = networkServiceProtocol
