@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginView" customModule="MVP" customModuleProvider="target">
             <connections>
+                <outlet property="passwordField" destination="K1u-Sg-XXN" id="qZT-uh-dXR"/>
+                <outlet property="usernameField" destination="GUH-tD-Vki" id="lMI-Ms-7ty"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ITT-bw-0ZZ"/>
             </connections>
         </placeholder>
@@ -17,9 +19,59 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Hej-fg-Zmf">
+                    <rect key="frame" x="16" y="409" width="382" height="88"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GUH-tD-Vki">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="vRe-pH-i7N"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1u-Sg-XXN">
+                            <rect key="frame" x="0.0" y="52" width="382" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="umN-Rf-dcm"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4N-tT-j6t">
+                    <rect key="frame" x="16" y="529" width="382" height="36"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="Qpk-1L-3Qh"/>
+                    </constraints>
+                    <state key="normal" title="Login">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="loginButtonTapped" destination="-1" eventType="touchUpInside" id="fC7-G8-H28"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="Hej-fg-Zmf" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="46T-ha-mmd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Hej-fg-Zmf" secondAttribute="trailing" constant="16" id="BHV-I7-8Z2"/>
+                <constraint firstItem="M4N-tT-j6t" firstAttribute="leading" secondItem="Hej-fg-Zmf" secondAttribute="leading" id="K8f-hT-kKK"/>
+                <constraint firstItem="M4N-tT-j6t" firstAttribute="trailing" secondItem="Hej-fg-Zmf" secondAttribute="trailing" id="Tty-Le-IIa"/>
+                <constraint firstItem="M4N-tT-j6t" firstAttribute="centerX" secondItem="Hej-fg-Zmf" secondAttribute="centerX" id="UA6-DP-Dr3"/>
+                <constraint firstItem="M4N-tT-j6t" firstAttribute="top" secondItem="Hej-fg-Zmf" secondAttribute="bottom" constant="32" id="aIT-aS-Ctd"/>
+                <constraint firstItem="Hej-fg-Zmf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="mlM-iT-Haa"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="139" y="153"/>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
 </document>

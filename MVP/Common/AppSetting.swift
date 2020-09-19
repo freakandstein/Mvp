@@ -12,6 +12,8 @@ enum AppSettingKey: String {
     case config = "Config"
     case baseURL = "BaseURL"
     case bearerToken = "BearerToken"
+    case clientSecret = "ClientSecret"
+    case clientID = "ClientID"
     
     var value: String {
         return rawValue
