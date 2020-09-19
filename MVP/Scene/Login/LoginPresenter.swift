@@ -49,8 +49,7 @@ class LoginPresenter: LoginViewToPresenter {
     private func navigateToMain() {
         if let view = view as? UIViewController {
             let mainView = MainView()
-            mainView.modalPresentationStyle = .fullScreen
-            view.navigationController?.present(mainView, animated: true, completion: nil)
+            view.navigationController?.setViewControllers([mainView], animated: true)
         }
     }
     

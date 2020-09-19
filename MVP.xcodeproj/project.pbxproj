@@ -29,6 +29,8 @@
 		7EABA49B25160B8F00E88C29 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EABA49A25160B8F00E88C29 /* MainView.xib */; };
 		7EABA49E251613AC00E88C29 /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA49D251613AC00E88C29 /* MainProtocols.swift */; };
 		7EABA4A02516144700E88C29 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA49F2516144700E88C29 /* MainPresenter.swift */; };
+		7EABA4A22516168B00E88C29 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA4A12516168B00E88C29 /* StoreService.swift */; };
+		7EABA4A42516175D00E88C29 /* StoresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA4A32516175D00E88C29 /* StoresResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		7EABA49A25160B8F00E88C29 /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		7EABA49D251613AC00E88C29 /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
 		7EABA49F2516144700E88C29 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		7EABA4A12516168B00E88C29 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
+		7EABA4A32516175D00E88C29 /* StoresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresResponse.swift; sourceTree = "<group>"; };
 		889F7008B6AA6C547C7D3197 /* Pods-MVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP.debug.xcconfig"; path = "Target Support Files/Pods-MVP/Pods-MVP.debug.xcconfig"; sourceTree = "<group>"; };
 		ED62A0111262FE87112ABF5E /* Pods-MVPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPTests.debug.xcconfig"; path = "Target Support Files/Pods-MVPTests/Pods-MVPTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				7E5465B02514E04C00A16612 /* LoginService.swift */,
+				7EABA4A12516168B00E88C29 /* StoreService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				7EABA4952515FFB900E88C29 /* ErrorResponse.swift */,
+				7EABA4A32516175D00E88C29 /* StoresResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -446,9 +452,11 @@
 				7E5465B42514E24300A16612 /* LoginRequest.swift in Sources */,
 				7E9022A12515278100AE1335 /* LoginProtocols.swift in Sources */,
 				7EABA4A02516144700E88C29 /* MainPresenter.swift in Sources */,
+				7EABA4A22516168B00E88C29 /* StoreService.swift in Sources */,
 				7E5465852514DBB000A16612 /* AppDelegate.swift in Sources */,
 				7E5465872514DBB000A16612 /* SceneDelegate.swift in Sources */,
 				7E90237E2515C41100AE1335 /* UILoadingView.swift in Sources */,
+				7EABA4A42516175D00E88C29 /* StoresResponse.swift in Sources */,
 				7E0FE2552515ECD0006370D7 /* BottomOverlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

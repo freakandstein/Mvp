@@ -10,8 +10,16 @@ import Foundation
 
 protocol MainViewToPresenter {
     var view: MainPresenterToView? { get set }
+    var stores: [StoreResponse] { get set }
+    
+    func getStores()
 }
 
 protocol MainPresenterToView {
     var presenter: MainViewToPresenter? { get set }
+    
+    func showLoading()
+    func hideLoading()
+    func didGetStores()
+    func failureGetStores(title: String, message: String)
 }

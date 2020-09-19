@@ -22,7 +22,6 @@ class LoginView: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    
     //MARK: Initialize
     init() {
         super.init(nibName: className, bundle: bundle)
@@ -58,10 +57,6 @@ extension LoginView: LoginPresenterToView {
         loadingView = UILoadingView(frame: self.view.bounds)
         guard let loadingView = loadingView else { return }
         self.view.addSubview(loadingView)
-    }
-    
-    func didSuccessLogin() {
-        
     }
     
     func didFailureLogin(title: String, content: String) {
