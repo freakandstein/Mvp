@@ -36,6 +36,7 @@
 		7EABA5192516377600E88C29 /* MaterialPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA5182516377600E88C29 /* MaterialPresenter.swift */; };
 		7EABA51B25163F8000E88C29 /* MaterialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA51A25163F8000E88C29 /* MaterialService.swift */; };
 		7EABA51E2516479600E88C29 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA51D2516479600E88C29 /* LoginTests.swift */; };
+		7EABA5E325167BC500E88C29 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA5E225167BC500E88C29 /* MainTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		7EABA51A25163F8000E88C29 /* MaterialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialService.swift; sourceTree = "<group>"; };
 		7EABA51C2516479500E88C29 /* MVPTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MVPTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		7EABA51D2516479600E88C29 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
+		7EABA5E225167BC500E88C29 /* MainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
 		889F7008B6AA6C547C7D3197 /* Pods-MVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP.debug.xcconfig"; path = "Target Support Files/Pods-MVP/Pods-MVP.debug.xcconfig"; sourceTree = "<group>"; };
 		ED62A0111262FE87112ABF5E /* Pods-MVPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPTests.debug.xcconfig"; path = "Target Support Files/Pods-MVPTests/Pods-MVPTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +180,7 @@
 			children = (
 				7E54659D2514DBB300A16612 /* Info.plist */,
 				7EABA51D2516479600E88C29 /* LoginTests.swift */,
+				7EABA5E225167BC500E88C29 /* MainTests.swift */,
 				7EABA51C2516479500E88C29 /* MVPTests-Bridging-Header.h */,
 			);
 			path = MVPTests;
@@ -514,6 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EABA5E325167BC500E88C29 /* MainTests.swift in Sources */,
 				7EABA51E2516479600E88C29 /* LoginTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
