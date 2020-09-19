@@ -37,8 +37,19 @@ class MainView: UIViewController {
     //MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = false
+        setupNavigationBar()
         presenter?.getStores()
+    }
+    
+    private func setupNavigationBar() {
+        let rightButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(tapLogout))
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.title = "Stores"
+        self.navigationItem.rightBarButtonItem = rightButtonItem
+    }
+    
+    @objc private func tapLogout() {
+        presenter?.doLogout()
     }
 }
 

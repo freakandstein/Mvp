@@ -38,6 +38,7 @@ class LoginView: UIViewController {
     //MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     @IBAction func loginButtonTapped() {

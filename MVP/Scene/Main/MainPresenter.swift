@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class MainPresenter: MainViewToPresenter {
     var view: MainPresenterToView?
@@ -26,6 +27,13 @@ class MainPresenter: MainViewToPresenter {
                 self?.view?.failureGetStores(title: title, message: message)
             }
             self?.view?.hideLoading()
+        }
+    }
+    
+    func doLogout() {
+        if let view = view as? UIViewController {
+            let loginView = LoginView()
+            view.navigationController?.setViewControllers([loginView], animated: true)
         }
     }
 }

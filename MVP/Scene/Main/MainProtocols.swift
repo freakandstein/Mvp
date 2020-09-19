@@ -13,6 +13,7 @@ protocol MainViewToPresenter {
     var stores: [StoreResponse] { get set }
     
     func getStores()
+    func doLogout()
 }
 
 protocol MainPresenterToView {
