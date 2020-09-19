@@ -35,7 +35,7 @@ class Provider: NetworkManagerProtocol {
                         completion(.failure(errorData))
                     } else {
                         let filteredResponse = try response.filterSuccessfulStatusCodes()
-                        let result = try filteredResponse.map(M.self)
+                        let result = try filteredResponse.map(model)
                         completion(.success(result))
                     }
                 } catch(let error) {

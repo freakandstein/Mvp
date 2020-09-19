@@ -5,22 +5,30 @@ PODS:
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
+  - Nimble (8.1.1)
+  - Quick (3.0.0)
 
 DEPENDENCIES:
   - IQKeyboardManager
   - Moya
+  - Nimble
+  - Quick
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - IQKeyboardManager
     - Moya
+    - Nimble
+    - Quick
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
+  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
 
-PODFILE CHECKSUM: 2c5ec9f11be2227d8f22fce52b09b31a5a38ceaa
+PODFILE CHECKSUM: c8ecb1ba3f0912fa87e2764b6f24efdd991b0865
 
 COCOAPODS: 1.9.3

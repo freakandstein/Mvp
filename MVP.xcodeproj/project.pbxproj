@@ -14,7 +14,6 @@
 		7E5465852514DBB000A16612 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5465842514DBB000A16612 /* AppDelegate.swift */; };
 		7E5465872514DBB000A16612 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5465862514DBB000A16612 /* SceneDelegate.swift */; };
 		7E54658E2514DBB200A16612 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E54658D2514DBB200A16612 /* Assets.xcassets */; };
-		7E54659C2514DBB300A16612 /* MVPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E54659B2514DBB300A16612 /* MVPTests.swift */; };
 		7E5465A82514DCB700A16612 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E5465A72514DCB700A16612 /* LoginView.xib */; };
 		7E5465AA2514DCC500A16612 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5465A92514DCC500A16612 /* LoginView.swift */; };
 		7E5465AE2514E02E00A16612 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5465AD2514E02E00A16612 /* NetworkManager.swift */; };
@@ -36,6 +35,7 @@
 		7EABA5172516372C00E88C29 /* MaterialProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA5162516372C00E88C29 /* MaterialProtocols.swift */; };
 		7EABA5192516377600E88C29 /* MaterialPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA5182516377600E88C29 /* MaterialPresenter.swift */; };
 		7EABA51B25163F8000E88C29 /* MaterialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA51A25163F8000E88C29 /* MaterialService.swift */; };
+		7EABA51E2516479600E88C29 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA51D2516479600E88C29 /* LoginTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +61,6 @@
 		7E54658D2514DBB200A16612 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E5465922514DBB300A16612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E5465972514DBB300A16612 /* MVPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E54659B2514DBB300A16612 /* MVPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPTests.swift; sourceTree = "<group>"; };
 		7E54659D2514DBB300A16612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E5465A72514DCB700A16612 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		7E5465A92514DCC500A16612 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -84,6 +83,8 @@
 		7EABA5162516372C00E88C29 /* MaterialProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialProtocols.swift; sourceTree = "<group>"; };
 		7EABA5182516377600E88C29 /* MaterialPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPresenter.swift; sourceTree = "<group>"; };
 		7EABA51A25163F8000E88C29 /* MaterialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialService.swift; sourceTree = "<group>"; };
+		7EABA51C2516479500E88C29 /* MVPTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MVPTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		7EABA51D2516479600E88C29 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		889F7008B6AA6C547C7D3197 /* Pods-MVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP.debug.xcconfig"; path = "Target Support Files/Pods-MVP/Pods-MVP.debug.xcconfig"; sourceTree = "<group>"; };
 		ED62A0111262FE87112ABF5E /* Pods-MVPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPTests.debug.xcconfig"; path = "Target Support Files/Pods-MVPTests/Pods-MVPTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,8 +176,9 @@
 		7E54659A2514DBB300A16612 /* MVPTests */ = {
 			isa = PBXGroup;
 			children = (
-				7E54659B2514DBB300A16612 /* MVPTests.swift */,
 				7E54659D2514DBB300A16612 /* Info.plist */,
+				7EABA51D2516479600E88C29 /* LoginTests.swift */,
+				7EABA51C2516479500E88C29 /* MVPTests-Bridging-Header.h */,
 			);
 			path = MVPTests;
 			sourceTree = "<group>";
@@ -325,6 +327,7 @@
 				7E5465932514DBB300A16612 /* Sources */,
 				7E5465942514DBB300A16612 /* Frameworks */,
 				7E5465952514DBB300A16612 /* Resources */,
+				D5C28A1826D66C23146B3454 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -351,6 +354,7 @@
 					};
 					7E5465962514DBB300A16612 = {
 						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1170;
 						TestTargetID = 7E5465802514DBB000A16612;
 					};
 				};
@@ -436,6 +440,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D5C28A1826D66C23146B3454 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVPTests/Pods-MVPTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVPTests/Pods-MVPTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MVPTests/Pods-MVPTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FA5AFAA2EB90487B7088361A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -493,7 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E54659C2514DBB300A16612 /* MVPTests.swift in Sources */,
+				7EABA51E2516479600E88C29 /* LoginTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +687,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MVPTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
@@ -676,6 +698,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.playground.MVPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MVPTests/MVPTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVP.app/MVP";
@@ -688,6 +712,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MVPTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
@@ -698,6 +723,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.playground.MVPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MVPTests/MVPTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVP.app/MVP";
