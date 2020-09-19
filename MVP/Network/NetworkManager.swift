@@ -50,7 +50,6 @@ class Provider: NetworkManagerProtocol {
 
 class NetworkManager {
     
-    public static let shared = NetworkManager()
     private var delegate: NetworkManagerProtocol?
     
     init(networkServiceProtocol: NetworkManagerProtocol = Provider()) {

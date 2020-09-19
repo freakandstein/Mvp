@@ -10,6 +10,7 @@ import Foundation
 
 protocol LoginViewToPresenter {
     var view: LoginPresenterToView? { get set }
+    var networkManager: NetworkManager { get set }
     
     func doLogin(username: String, password: String)
 }

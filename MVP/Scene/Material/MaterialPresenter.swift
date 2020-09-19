@@ -12,11 +12,12 @@ import UIKit
 class MaterialPresenter: MaterialViewToPresenter {
     var view: MaterialPresenterToView?
     var storeID: String = ""
+    var networkManager: NetworkManager = NetworkManager()
     
     func getMaterial() {
         let targetService = MaterialService.getMaterials(storeID: storeID)
         view?.showLoading()
-        NetworkManager.shared.request(target: targetService, model: EmptyResponse.self) { [weak self] (result) in
+        networkManager.request(target: targetService, model: EmptyResponse.self) { [weak self] (result) in
             switch result {
             case .success:
                 print("#Success")

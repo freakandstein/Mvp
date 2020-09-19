@@ -10,6 +10,7 @@ import Foundation
 
 protocol MaterialViewToPresenter {
     var view: MaterialPresenterToView? { get set }
+    var networkManager: NetworkManager { get set }
     var storeID: String { get set }
     
     func getMaterial()

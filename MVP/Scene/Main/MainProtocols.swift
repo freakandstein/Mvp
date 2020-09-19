@@ -10,6 +10,7 @@ import Foundation
 
 protocol MainViewToPresenter {
     var view: MainPresenterToView? { get set }
+    var networkManager: NetworkManager { get set }
     var stores: [StoreResponse] { get set }
     
     func getStores()

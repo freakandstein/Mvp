@@ -13,6 +13,7 @@ struct EmptyResponse: Codable { }
 
 class LoginPresenter: LoginViewToPresenter {
     var view: LoginPresenterToView?
+    var networkManager: NetworkManager = NetworkManager()
     
     private func validation(username: String, password: String) {
         if username.isEmpty && password.isEmpty {
@@ -31,7 +32,7 @@ class LoginPresenter: LoginViewToPresenter {
                 request.clientId = AppSetting.shared.infoForKey(AppSettingKey.clientID.value)
                 request.clientSecret = AppSetting.shared.infoForKey(AppSettingKey.clientSecret.value)
                 let targetService = LoginService.login(request: request)
-                NetworkManager.shared.request(target: targetService, model: EmptyResponse.self) { [weak self] (result) in
+                networkManager.request(target: targetService, model: EmptyResponse.self) { [weak self] (result) in
                     switch result {
                     case .success:
                         self?.navigateToMain()

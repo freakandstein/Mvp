@@ -12,11 +12,12 @@ import UIKit
 class MainPresenter: MainViewToPresenter {
     var view: MainPresenterToView?
     var stores: [StoreResponse] = []
+    var networkManager: NetworkManager = NetworkManager()
     
     func getStores() {
         view?.showLoading()
         let targetService = StoreService.getStores
-        NetworkManager.shared.request(target: targetService, model: StoresResponse.self) { [weak self] (result) in
+        networkManager.request(target: targetService, model: StoresResponse.self) { [weak self] (result) in
             switch result {
             case .success(let response):
                 self?.stores = response.data
