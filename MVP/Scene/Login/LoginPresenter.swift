@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct EmptyResponse: Codable { }
 
@@ -33,13 +34,23 @@ class LoginPresenter: LoginViewToPresenter {
                 NetworkManager.shared.request(target: targetService, model: EmptyResponse.self) { [weak self] (result) in
                     switch result {
                     case .success:
-                        print("#Success")
+                        self?.navigateToMain()
                     case .failure(let error):
-                        print("#\(error)")
+                        let title = "Error"
+                        let message = error.localizedDescription
+                        self?.view?.didFailureLogin(title: title, content: message)
                     }
                     self?.view?.hideLoading()
                 }
             }
+        }
+    }
+    
+    private func navigateToMain() {
+        if let view = view as? UIViewController {
+            let mainView = MainView()
+            mainView.modalPresentationStyle = .fullScreen
+            view.navigationController?.present(mainView, animated: true, completion: nil)
         }
     }
     

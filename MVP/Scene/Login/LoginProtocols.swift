@@ -20,6 +20,6 @@ protocol LoginPresenterToView {
     func showLoading()
     func hideLoading()
     func didSuccessLogin()
-    func didFailureLogin()
+    func didFailureLogin(title: String, content: String)
     func didFailureValidation(message: String)
 }

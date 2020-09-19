@@ -15,6 +15,7 @@ class LoginView: UIViewController {
     private let bundle = Bundle(for: LoginView.self)
     private let className = String(describing: LoginView.self)
     private var loadingView: UILoadingView?
+    private var errorView: BottomOverlayView?
     var presenter: LoginViewToPresenter?
     
     //MARK: IBOutlets
@@ -63,12 +64,17 @@ extension LoginView: LoginPresenterToView {
         
     }
     
-    func didFailureLogin() {
-        
+    func didFailureLogin(title: String, content: String) {
+        errorView = BottomOverlayView(frame: self.view.bounds, title: title, content: content)
+        if let errorView = errorView {
+            self.view.addSubview(errorView)
+        }
     }
     
     func didFailureValidation(message: String) {
-        let errorView = BottomOverlayView(frame: self.view.bounds, title: "Validation Failure", content: message)
-        self.view.addSubview(errorView)
+        errorView = BottomOverlayView(frame: self.view.bounds, title: "Validation Failure", content: message)
+        if let errorView = errorView {
+            self.view.addSubview(errorView)
+        }
     }
 }

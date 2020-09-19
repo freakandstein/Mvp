@@ -29,9 +29,15 @@ class Provider: NetworkManagerProtocol {
             switch result {
             case .success(let response):
                 do {
-                    let filteredResponse = try response.filterSuccessfulStatusCodes()
-                    let result = try filteredResponse.map(M.self)
-                    completion(.success(result))
+                    if response.statusCode == 400 {
+                        let errorResponse = try response.map(ErrorResponse.self)
+                        let errorData = NSError(domain: errorResponse.message, code: response.statusCode, userInfo: nil)
+                        completion(.failure(errorData))
+                    } else {
+                        let filteredResponse = try response.filterSuccessfulStatusCodes()
+                        let result = try filteredResponse.map(M.self)
+                        completion(.success(result))
+                    }
                 } catch(let error) {
                     completion(.failure(error))
                 }

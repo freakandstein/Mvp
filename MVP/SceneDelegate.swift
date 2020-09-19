@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManager
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -21,8 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         let loginView = LoginView()
         let navigationController = UINavigationController(rootViewController: loginView)
+        navigationController.isNavigationBarHidden = true
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        IQKeyboardManager.shared().isEnabled = true
     }
 
     @available(iOS 13.0, *)
