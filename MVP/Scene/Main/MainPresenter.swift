@@ -36,4 +36,12 @@ class MainPresenter: MainViewToPresenter {
             view.navigationController?.setViewControllers([loginView], animated: true)
         }
     }
+    
+    func selectStore(indexPath: IndexPath) {
+        let store = stores[indexPath.row]
+        if let view = view as? UIViewController {
+            let materialView = MaterialView(storeID: store.uuid)
+            view.navigationController?.pushViewController(materialView, animated: true)
+        }
+    }
 }

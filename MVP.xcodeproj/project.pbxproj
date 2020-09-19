@@ -31,6 +31,11 @@
 		7EABA4A02516144700E88C29 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA49F2516144700E88C29 /* MainPresenter.swift */; };
 		7EABA4A22516168B00E88C29 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA4A12516168B00E88C29 /* StoreService.swift */; };
 		7EABA4A42516175D00E88C29 /* StoresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA4A32516175D00E88C29 /* StoresResponse.swift */; };
+		7EABA5132516364500E88C29 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA5122516364500E88C29 /* MaterialView.swift */; };
+		7EABA515251636B600E88C29 /* MaterialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EABA514251636B600E88C29 /* MaterialView.xib */; };
+		7EABA5172516372C00E88C29 /* MaterialProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA5162516372C00E88C29 /* MaterialProtocols.swift */; };
+		7EABA5192516377600E88C29 /* MaterialPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA5182516377600E88C29 /* MaterialPresenter.swift */; };
+		7EABA51B25163F8000E88C29 /* MaterialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA51A25163F8000E88C29 /* MaterialService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +79,11 @@
 		7EABA49F2516144700E88C29 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		7EABA4A12516168B00E88C29 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
 		7EABA4A32516175D00E88C29 /* StoresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresResponse.swift; sourceTree = "<group>"; };
+		7EABA5122516364500E88C29 /* MaterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		7EABA514251636B600E88C29 /* MaterialView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaterialView.xib; sourceTree = "<group>"; };
+		7EABA5162516372C00E88C29 /* MaterialProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialProtocols.swift; sourceTree = "<group>"; };
+		7EABA5182516377600E88C29 /* MaterialPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialPresenter.swift; sourceTree = "<group>"; };
+		7EABA51A25163F8000E88C29 /* MaterialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialService.swift; sourceTree = "<group>"; };
 		889F7008B6AA6C547C7D3197 /* Pods-MVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP.debug.xcconfig"; path = "Target Support Files/Pods-MVP/Pods-MVP.debug.xcconfig"; sourceTree = "<group>"; };
 		ED62A0111262FE87112ABF5E /* Pods-MVPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPTests.debug.xcconfig"; path = "Target Support Files/Pods-MVPTests/Pods-MVPTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,6 +215,7 @@
 			children = (
 				7E5465B02514E04C00A16612 /* LoginService.swift */,
 				7EABA4A12516168B00E88C29 /* StoreService.swift */,
+				7EABA51A25163F8000E88C29 /* MaterialService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -266,10 +277,22 @@
 		7EABA49C25160C1200E88C29 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7EABA5112516362300E88C29 /* Material */,
 				7E5465A62514DCA800A16612 /* Login */,
 				7EABA49725160B6A00E88C29 /* Main */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		7EABA5112516362300E88C29 /* Material */ = {
+			isa = PBXGroup;
+			children = (
+				7EABA5122516364500E88C29 /* MaterialView.swift */,
+				7EABA514251636B600E88C29 /* MaterialView.xib */,
+				7EABA5162516372C00E88C29 /* MaterialProtocols.swift */,
+				7EABA5182516377600E88C29 /* MaterialPresenter.swift */,
+			);
+			path = Material;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +381,7 @@
 			files = (
 				7E54658E2514DBB200A16612 /* Assets.xcassets in Resources */,
 				7EABA49B25160B8F00E88C29 /* MainView.xib in Resources */,
+				7EABA515251636B600E88C29 /* MaterialView.xib in Resources */,
 				7E0FE2572515ED06006370D7 /* BottomOverlayView.xib in Resources */,
 				7E5465A82514DCB700A16612 /* LoginView.xib in Resources */,
 			);
@@ -444,7 +468,11 @@
 				7E5465AE2514E02E00A16612 /* NetworkManager.swift in Sources */,
 				7EABA49925160B7D00E88C29 /* MainView.swift in Sources */,
 				7EABA49E251613AC00E88C29 /* MainProtocols.swift in Sources */,
+				7EABA51B25163F8000E88C29 /* MaterialService.swift in Sources */,
+				7EABA5132516364500E88C29 /* MaterialView.swift in Sources */,
 				7E5465AA2514DCC500A16612 /* LoginView.swift in Sources */,
+				7EABA5192516377600E88C29 /* MaterialPresenter.swift in Sources */,
+				7EABA5172516372C00E88C29 /* MaterialProtocols.swift in Sources */,
 				7E5465DC2514F46900A16612 /* AppSetting.swift in Sources */,
 				7EABA4962515FFB900E88C29 /* ErrorResponse.swift in Sources */,
 				7E9022A325152C6500AE1335 /* LoginPresenter.swift in Sources */,

@@ -14,6 +14,7 @@ protocol MainViewToPresenter {
     
     func getStores()
     func doLogout()
+    func selectStore(indexPath: IndexPath)
 }
 
 protocol MainPresenterToView {
