@@ -19,6 +19,7 @@ class MaterialView: UIViewController {
     
     //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     //MARK: Initialize
     init(storeID: String) {

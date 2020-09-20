@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MaterialView" customModule="MVP" customModuleProvider="target">
             <connections>
+                <outlet property="searchBar" destination="ZWd-fP-IU7" id="BsU-gh-yFD"/>
                 <outlet property="tableView" destination="XAM-hu-IqD" id="NzU-VV-Oep"/>
                 <outlet property="view" destination="iN0-l3-epB" id="USW-oI-NRD"/>
             </connections>
@@ -22,6 +23,11 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XAM-hu-IqD">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <searchBar key="tableHeaderView" contentMode="redraw" id="ZWd-fP-IU7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </searchBar>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Yek-Rs-Kr8"/>
                         <outlet property="delegate" destination="-1" id="iLS-0j-b5t"/>
