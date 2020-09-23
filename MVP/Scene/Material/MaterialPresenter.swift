@@ -17,14 +17,18 @@ class MaterialPresenter: MaterialViewToPresenter {
     var rawMaterials: [RawMaterial] = []
     var rawMaterialsSearch: [RawMaterial] = []
     
-    func getMaterial() {
+    func getMaterial(isRefresh: Bool) {
         let targetService = MaterialService.getMaterials(storeID: storeID)
         view?.showLoading()
         networkManager.request(target: targetService, model: RawMaterialResponse.self) { [weak self] (result) in
             switch result {
             case .success(let response):
                 self?.rawMaterialsSearch.removeAll()
-                self?.rawMaterials = response.data
+                if isRefresh {
+                    self?.rawMaterials = response.data
+                } else {
+                    self?.rawMaterials.append(contentsOf: response.data)
+                }
                 self?.view?.didGetMaterials()
             case .failure(let error):
                 let title = "Error"
@@ -56,11 +60,17 @@ class MaterialPresenter: MaterialViewToPresenter {
         }
     }
     
-    func getMaterial(indexPath: IndexPath) -> RawMaterial {
+    func getMaterialByIndex(indexPath: IndexPath) -> RawMaterial {
         if rawMaterialsSearch.isEmpty {
             return rawMaterials[indexPath.row]
         } else {
             return rawMaterialsSearch[indexPath.row]
+        }
+    }
+    
+    func loadMore(indexPath: IndexPath) {
+        if indexPath.row == rawMaterials.count - 1 {
+            getMaterial(isRefresh: false)
         }
     }
     

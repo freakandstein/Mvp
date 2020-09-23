@@ -15,11 +15,12 @@ protocol MaterialViewToPresenter {
     var rawMaterials: [RawMaterial] { get set }
     var rawMaterialsSearch: [RawMaterial] { get set }
     
-    func getMaterial()
+    func getMaterial(isRefresh: Bool)
     func selectMaterial(indexPath: IndexPath)
     func search(keyword: String)
     func getNumOfItems() -> Int
-    func getMaterial(indexPath: IndexPath) -> RawMaterial
+    func getMaterialByIndex(indexPath: IndexPath) -> RawMaterial
+    func loadMore(indexPath: IndexPath)
 }
 
 protocol MaterialPresenterToView {

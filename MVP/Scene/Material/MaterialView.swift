@@ -18,6 +18,7 @@ class MaterialView: UIViewController {
     private let disposeBag = DisposeBag()
     private var loadingView: UILoadingView?
     private var errorView: BottomOverlayView?
+    private var refreshControl: UIRefreshControl!
     var presenter: MaterialViewToPresenter?
     
     //MARK: IBOutlets
@@ -41,12 +42,20 @@ class MaterialView: UIViewController {
     //MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.getMaterial()
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(pullRefresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+        presenter?.getMaterial(isRefresh: false)
         searchBar.rx.text.orEmpty.asDriver()
             .debounce(.milliseconds(300))
             .drive(onNext: { [weak self] (text) in
                 self?.presenter?.search(keyword: text)
             }).disposed(by: disposeBag)
+    }
+    
+    @objc private func pullRefresh() {
+        presenter?.getMaterial(isRefresh: true)
     }
 }
 
@@ -54,6 +63,7 @@ extension MaterialView: MaterialPresenterToView {
     
     func hideLoading() {
         loadingView?.removeFromSuperview()
+        refreshControl.endRefreshing()
     }
     
     func showLoading() {
@@ -83,13 +93,14 @@ extension MaterialView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let presenter = presenter else { return UITableViewCell() }
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        let data = presenter.getMaterial(indexPath: indexPath)
+        let data = presenter.getMaterialByIndex(indexPath: indexPath)
         cell.textLabel?.text = data.nameEng
+        presenter.loadMore(indexPath: indexPath)
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.selectMaterial(indexPath: indexPath)
     }
-    
 }
