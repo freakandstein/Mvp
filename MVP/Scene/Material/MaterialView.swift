@@ -68,11 +68,15 @@ extension MaterialView: MaterialPresenterToView {
 
 extension MaterialView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return .zero
+        return presenter?.rawMaterials.count ?? .zero
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let presenter = presenter else { return UITableViewCell() }
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        let data = presenter.rawMaterials[indexPath.row]
+        cell.textLabel?.text = data.nameEng
+        return cell
     }
     
     

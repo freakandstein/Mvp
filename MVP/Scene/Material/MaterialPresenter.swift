@@ -12,15 +12,17 @@ import UIKit
 class MaterialPresenter: MaterialViewToPresenter {
     var view: MaterialPresenterToView?
     var storeID: String = ""
-    var networkManager: NetworkManager = NetworkManager()
+    var networkManager: NetworkManager = NetworkManager(networkServiceProtocol: Provider(isDebugMode: true))
+    var rawMaterials: [RawMaterial] = []
     
     func getMaterial() {
         let targetService = MaterialService.getMaterials(storeID: storeID)
         view?.showLoading()
-        networkManager.request(target: targetService, model: EmptyResponse.self) { [weak self] (result) in
+        networkManager.request(target: targetService, model: RawMaterialResponse.self) { [weak self] (result) in
             switch result {
-            case .success:
-                print("#Success")
+            case .success(let response):
+                self?.rawMaterials = response.data
+                self?.view?.didGetMaterials()
             case .failure(let error):
                 let title = "Error"
                 let message = error.localizedDescription

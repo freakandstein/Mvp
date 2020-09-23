@@ -12,6 +12,7 @@ protocol MaterialViewToPresenter {
     var view: MaterialPresenterToView? { get set }
     var networkManager: NetworkManager { get set }
     var storeID: String { get set }
+    var rawMaterials: [RawMaterial] { get set }
     
     func getMaterial()
 }

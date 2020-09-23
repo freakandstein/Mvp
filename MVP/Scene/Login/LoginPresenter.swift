@@ -13,7 +13,8 @@ struct EmptyResponse: Codable { }
 
 class LoginPresenter: LoginViewToPresenter {
     var view: LoginPresenterToView?
-    var networkManager: NetworkManager = NetworkManager()
+    var networkManager: NetworkManager = NetworkManager(networkServiceProtocol: Provider(isDebugMode: true))
+    var appContext: AppContextProtocol = AppContext.shared
     
     private func validation(username: String, password: String) {
         if username.isEmpty && password.isEmpty {
@@ -32,10 +33,12 @@ class LoginPresenter: LoginViewToPresenter {
                 request.clientId = AppSetting.shared.infoForKey(AppSettingKey.clientID.value)
                 request.clientSecret = AppSetting.shared.infoForKey(AppSettingKey.clientSecret.value)
                 let targetService = LoginService.login(request: request)
-                networkManager.request(target: targetService, model: EmptyResponse.self) { [weak self] (result) in
+                networkManager.request(target: targetService, model: AuthResponse.self) { [weak self] (result) in
                     switch result {
-                    case .success:
-                        self?.navigateToMain()
+                    case .success(let response):
+                        self?.appContext.accessToken = response.accessToken
+                        self?.appContext.refreshToken = response.refreshToken
+                        self?.getUser()
                     case .failure(let error):
                         let title = "Error"
                         let message = error.localizedDescription
@@ -51,6 +54,22 @@ class LoginPresenter: LoginViewToPresenter {
         if let view = view as? UIViewController {
             let mainView = MainView()
             view.navigationController?.setViewControllers([mainView], animated: true)
+        }
+    }
+    
+    private func getUser() {
+        let targetService = LoginService.getUser
+        networkManager.request(target: targetService, model: UserResponse.self) { [weak self] (result) in
+            switch result {
+            case .success(let response):
+                self?.appContext.userData = try? JSONEncoder().encode(response)
+                self?.navigateToMain()
+            case .failure(let error):
+                let title = "Error"
+                let message = error.localizedDescription
+                self?.view?.didFailureLogin(title: title, content: message)
+            }
+            self?.view?.hideLoading()
         }
     }
     

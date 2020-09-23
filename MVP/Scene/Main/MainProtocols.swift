@@ -12,6 +12,7 @@ protocol MainViewToPresenter {
     var view: MainPresenterToView? { get set }
     var networkManager: NetworkManager { get set }
     var stores: [StoreResponse] { get set }
+    var appContext: AppContextProtocol { get set }
     
     func getStores()
     func doLogout()

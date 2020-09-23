@@ -16,19 +16,31 @@ protocol NetworkManagerProtocol: class {
 class Provider: NetworkManagerProtocol {
     
     private var provider: MoyaProvider<MultiTarget>?
-    private var token: String
+    private var isDebug: Bool
+    private var appContext: AppContextProtocol = AppContext.shared
     
-    init() {
-        token = AppSetting.shared.infoForKey(AppSettingKey.bearerToken.value)
-        let authPlugin = AccessTokenPlugin { [unowned self] _ in self.token  }
-        provider = MoyaProvider<MultiTarget>(plugins: [authPlugin, NetworkLoggerPlugin()])
+    init(isDebugMode: Bool = false) {
+        if appContext.accessToken.isEmpty {
+            appContext.accessToken = AppSetting.shared.infoForKey(AppSettingKey.bearerToken.value)
+        }
+        isDebug = isDebugMode
+        let authPlugin = AccessTokenPlugin { [unowned self] _ in self.appContext.accessToken  }
+        if isDebug {
+            provider = MoyaProvider<MultiTarget>(plugins: [authPlugin, NetworkLoggerPlugin()])
+        } else {
+            provider = MoyaProvider<MultiTarget>(plugins: [authPlugin])
+        }
     }
     
     public func request<T, M>(target: T, model: M.Type, completion: @escaping (Result<M, Error>) -> Void) where T : TargetType, M : Decodable {
-        self.provider?.request(MultiTarget(target)) { (result) in
+        self.provider?.request(MultiTarget(target)) { [unowned self] (result) in
             switch result {
             case .success(let response):
                 do {
+                    if self.isDebug {
+                        let jsonObject = try JSONSerialization.jsonObject(with: response.data, options: .allowFragments)
+                        print(jsonObject)
+                    }
                     if response.statusCode == 400 {
                         let errorResponse = try response.map(ErrorResponse.self)
                         let errorData = NSError(domain: errorResponse.message, code: response.statusCode, userInfo: nil)

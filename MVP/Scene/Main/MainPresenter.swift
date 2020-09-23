@@ -12,7 +12,8 @@ import UIKit
 class MainPresenter: MainViewToPresenter {
     var view: MainPresenterToView?
     var stores: [StoreResponse] = []
-    var networkManager: NetworkManager = NetworkManager()
+    var networkManager: NetworkManager = NetworkManager(networkServiceProtocol: Provider(isDebugMode: true))
+    var appContext: AppContextProtocol = AppContext.shared
     
     func getStores() {
         view?.showLoading()
@@ -34,6 +35,8 @@ class MainPresenter: MainViewToPresenter {
     func doLogout() {
         if let view = view as? UIViewController {
             let loginView = LoginView()
+            appContext.accessToken = ""
+            appContext.refreshToken = ""
             view.navigationController?.setViewControllers([loginView], animated: true)
         }
     }

@@ -11,6 +11,7 @@ import Moya
 
 enum LoginService {
     case login(request: LoginRequest)
+    case getUser
 }
 
 extension LoginService: TargetType, AccessTokenAuthorizable {
@@ -21,7 +22,7 @@ extension LoginService: TargetType, AccessTokenAuthorizable {
         
     var authorizationType: AuthorizationType? {
         switch self {
-        case .login:
+        case .login, .getUser:
             return .bearer
         }
     }
@@ -35,6 +36,8 @@ extension LoginService: TargetType, AccessTokenAuthorizable {
         switch self {
         case .login:
             return "oauth/token"
+        case .getUser:
+            return "users/me"
         }
     }
     
@@ -42,6 +45,8 @@ extension LoginService: TargetType, AccessTokenAuthorizable {
         switch self {
         case .login:
             return .post
+        case .getUser:
+            return .get
         }
     }
     
@@ -60,6 +65,8 @@ extension LoginService: TargetType, AccessTokenAuthorizable {
                 "password": request.password
             ] as [String: String]
             return parameter
+        case .getUser:
+            return [:]
         }
     }
     
@@ -67,6 +74,8 @@ extension LoginService: TargetType, AccessTokenAuthorizable {
         switch self {
         case .login:
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        case .getUser:
+            return .requestPlain
         }
     }
 }
