@@ -45,6 +45,7 @@
 		7EF9A4A0251BC48E0085A5BC /* MaterialDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9A49F251BC48E0085A5BC /* MaterialDetailView.swift */; };
 		7EF9A4A2251BC51D0085A5BC /* MaterialDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9A4A1251BC51D0085A5BC /* MaterialDetailProtocols.swift */; };
 		7EF9A4A4251BC5B20085A5BC /* MaterialDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9A4A3251BC5B20085A5BC /* MaterialDetailPresenter.swift */; };
+		7EF9A4A6251BCF460085A5BC /* RawMaterialDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9A4A5251BCF460085A5BC /* RawMaterialDetailResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		7EF9A49F251BC48E0085A5BC /* MaterialDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDetailView.swift; sourceTree = "<group>"; };
 		7EF9A4A1251BC51D0085A5BC /* MaterialDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDetailProtocols.swift; sourceTree = "<group>"; };
 		7EF9A4A3251BC5B20085A5BC /* MaterialDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDetailPresenter.swift; sourceTree = "<group>"; };
+		7EF9A4A5251BCF460085A5BC /* RawMaterialDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMaterialDetailResponse.swift; sourceTree = "<group>"; };
 		889F7008B6AA6C547C7D3197 /* Pods-MVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP.debug.xcconfig"; path = "Target Support Files/Pods-MVP/Pods-MVP.debug.xcconfig"; sourceTree = "<group>"; };
 		ED62A0111262FE87112ABF5E /* Pods-MVPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPTests.debug.xcconfig"; path = "Target Support Files/Pods-MVPTests/Pods-MVPTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,6 +259,7 @@
 				7E28A7C1251B06A000426642 /* UserResponse.swift */,
 				7EF9A496251BA8EC0085A5BC /* AuthResponse.swift */,
 				7EF9A49A251BC1060085A5BC /* RawMaterialResponse.swift */,
+				7EF9A4A5251BCF460085A5BC /* RawMaterialDetailResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				7EABA51B25163F8000E88C29 /* MaterialService.swift in Sources */,
 				7EABA5132516364500E88C29 /* MaterialView.swift in Sources */,
 				7E5465AA2514DCC500A16612 /* LoginView.swift in Sources */,
+				7EF9A4A6251BCF460085A5BC /* RawMaterialDetailResponse.swift in Sources */,
 				7EABA5192516377600E88C29 /* MaterialPresenter.swift in Sources */,
 				7EABA5172516372C00E88C29 /* MaterialProtocols.swift in Sources */,
 				7E5465DC2514F46900A16612 /* AppSetting.swift in Sources */,

@@ -11,6 +11,7 @@ import Moya
 
 enum MaterialService {
     case getMaterials(storeID: String)
+    case getMaterialDetail(uuid: String)
 }
 
 extension MaterialService: TargetType, AccessTokenAuthorizable {
@@ -21,7 +22,7 @@ extension MaterialService: TargetType, AccessTokenAuthorizable {
         
     var authorizationType: AuthorizationType? {
         switch self {
-        case .getMaterials:
+        case .getMaterials, .getMaterialDetail:
             return .bearer
         }
     }
@@ -31,6 +32,9 @@ extension MaterialService: TargetType, AccessTokenAuthorizable {
         switch self {
         case .getMaterials(let storeID):
             stringURL += "/raw-materials?storeId=\(storeID)"
+        
+        case .getMaterialDetail(let uuid):
+            stringURL += "/raw-materials/\(uuid)"
         }
         let baseURL = URL(string: stringURL)!
         return baseURL
@@ -38,14 +42,14 @@ extension MaterialService: TargetType, AccessTokenAuthorizable {
 
     var path: String {
         switch self {
-        case .getMaterials:
+        case .getMaterials, .getMaterialDetail:
             return ""
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getMaterials:
+        case .getMaterials, .getMaterialDetail:
             return .get
         }
     }
@@ -56,7 +60,7 @@ extension MaterialService: TargetType, AccessTokenAuthorizable {
     
     var task: Task {
         switch self {
-        case .getMaterials:
+        case .getMaterials, .getMaterialDetail:
             return .requestPlain
         }
     }

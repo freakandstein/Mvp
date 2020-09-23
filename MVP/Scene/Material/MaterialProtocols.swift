@@ -15,6 +15,7 @@ protocol MaterialViewToPresenter {
     var rawMaterials: [RawMaterial] { get set }
     
     func getMaterial()
+    func selectMaterial(indexPath: IndexPath)
 }
 
 protocol MaterialPresenterToView {

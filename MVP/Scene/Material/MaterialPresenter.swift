@@ -31,4 +31,12 @@ class MaterialPresenter: MaterialViewToPresenter {
             self?.view?.hideLoading()
         }
     }
+    
+    func selectMaterial(indexPath: IndexPath) {
+        let rawMaterial = rawMaterials[indexPath.row]
+        if let view = view as? UIViewController {
+            let materialDetailView = MaterialDetailView(uuid: rawMaterial.uuid)
+            view.navigationController?.pushViewController(materialDetailView, animated: true)
+        }
+    }
 }
