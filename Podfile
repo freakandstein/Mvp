@@ -8,6 +8,8 @@ target 'MVP' do
   # Pods for MVP
   pod 'Moya'
   pod 'IQKeyboardManager'
+  pod 'RxSwift'
+  pod 'RxCocoa'
   
   target 'MVPTests' do
     inherit! :search_paths

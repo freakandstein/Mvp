@@ -8,11 +8,14 @@
 
 import Foundation
 import UIKit
+import RxCocoa
+import RxSwift
 
 class MaterialView: UIViewController {
     //MARK: Properties
     private let className = String(describing: MaterialView.self)
     private let bundle = Bundle(for: MaterialView.self)
+    private let disposeBag = DisposeBag()
     private var loadingView: UILoadingView?
     private var errorView: BottomOverlayView?
     var presenter: MaterialViewToPresenter?
@@ -39,6 +42,11 @@ class MaterialView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.getMaterial()
+        searchBar.rx.text.orEmpty.asDriver()
+            .debounce(.milliseconds(300))
+            .drive(onNext: { [weak self] (text) in
+                self?.presenter?.search(keyword: text)
+            }).disposed(by: disposeBag)
     }
 }
 
@@ -68,13 +76,14 @@ extension MaterialView: MaterialPresenterToView {
 
 extension MaterialView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.rawMaterials.count ?? .zero
+        guard let presenter = presenter else { return .zero }
+        return presenter.getNumOfItems()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let presenter = presenter else { return UITableViewCell() }
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        let data = presenter.rawMaterials[indexPath.row]
+        let data = presenter.getMaterial(indexPath: indexPath)
         cell.textLabel?.text = data.nameEng
         return cell
     }

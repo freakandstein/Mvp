@@ -13,9 +13,13 @@ protocol MaterialViewToPresenter {
     var networkManager: NetworkManager { get set }
     var storeID: String { get set }
     var rawMaterials: [RawMaterial] { get set }
+    var rawMaterialsSearch: [RawMaterial] { get set }
     
     func getMaterial()
     func selectMaterial(indexPath: IndexPath)
+    func search(keyword: String)
+    func getNumOfItems() -> Int
+    func getMaterial(indexPath: IndexPath) -> RawMaterial
 }
 
 protocol MaterialPresenterToView {
