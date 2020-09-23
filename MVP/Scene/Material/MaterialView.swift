@@ -46,12 +46,12 @@ class MaterialView: UIViewController {
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(pullRefresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
-        presenter?.getMaterial(isRefresh: false)
         searchBar.rx.text.orEmpty.asDriver()
             .debounce(.milliseconds(300))
             .drive(onNext: { [weak self] (text) in
                 self?.presenter?.search(keyword: text)
             }).disposed(by: disposeBag)
+        presenter?.getMaterial(isRefresh: false)
     }
     
     @objc private func pullRefresh() {

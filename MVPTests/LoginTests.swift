@@ -47,9 +47,14 @@ class LoginTests: QuickSpec {
                 self.isSuccess = isSuccess
             }
             func request<T, M>(target: T, model: M.Type, completion: @escaping (Result<M, Error>) -> Void) where T : TargetType, M : Decodable {
-                let emptyResponse = EmptyResponse()
+                let userResponse = UserResponse(data: User(id: 1, name: "Test", tenant: Tenant(id: 1, description: "Test Description", uuid: "qwertyuio2345678")))
+                let authResponse = AuthResponse(accessToken: "666", refreshToken: "999")
                 if isSuccess {
-                    completion(.success(emptyResponse as! M))
+                    if M.self is AuthResponse.Type {
+                        completion(.success(authResponse as! M))
+                    } else {
+                        completion(.success(userResponse as! M))
+                    }
                 } else {
                     completion(.failure(NSError(domain: "", code: 400, userInfo: nil)))
                 }
