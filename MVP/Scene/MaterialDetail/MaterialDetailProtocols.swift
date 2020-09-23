@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+protocol MaterialDetailViewToPresenter: class {
+    var view: MaterialDetailPresenterToView? { get set }
+}
+
+protocol MaterialDetailPresenterToView: class {
+    var presenter: MaterialDetailViewToPresenter? { get set }
+    
+}

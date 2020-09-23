@@ -11,6 +11,7 @@
 		7545C97160C762C8D87211AA /* Pods_MVPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E234002CA926B69EBEEBDC /* Pods_MVPTests.framework */; };
 		7E0FE2552515ECD0006370D7 /* BottomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0FE2542515ECD0006370D7 /* BottomOverlay.swift */; };
 		7E0FE2572515ED06006370D7 /* BottomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0FE2562515ED06006370D7 /* BottomOverlayView.xib */; };
+		7E28A7C2251B06A000426642 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E28A7C1251B06A000426642 /* UserResponse.swift */; };
 		7E5465852514DBB000A16612 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5465842514DBB000A16612 /* AppDelegate.swift */; };
 		7E5465872514DBB000A16612 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5465862514DBB000A16612 /* SceneDelegate.swift */; };
 		7E54658E2514DBB200A16612 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E54658D2514DBB200A16612 /* Assets.xcassets */; };
@@ -37,6 +38,13 @@
 		7EABA51B25163F8000E88C29 /* MaterialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA51A25163F8000E88C29 /* MaterialService.swift */; };
 		7EABA51E2516479600E88C29 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA51D2516479600E88C29 /* LoginTests.swift */; };
 		7EABA5E325167BC500E88C29 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EABA5E225167BC500E88C29 /* MainTests.swift */; };
+		7EF9A497251BA8EC0085A5BC /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9A496251BA8EC0085A5BC /* AuthResponse.swift */; };
+		7EF9A499251BB7030085A5BC /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9A498251BB7030085A5BC /* AppContext.swift */; };
+		7EF9A49B251BC1060085A5BC /* RawMaterialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9A49A251BC1060085A5BC /* RawMaterialResponse.swift */; };
+		7EF9A49E251BC4800085A5BC /* MaterialDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EF9A49D251BC4800085A5BC /* MaterialDetailView.xib */; };
+		7EF9A4A0251BC48E0085A5BC /* MaterialDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9A49F251BC48E0085A5BC /* MaterialDetailView.swift */; };
+		7EF9A4A2251BC51D0085A5BC /* MaterialDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9A4A1251BC51D0085A5BC /* MaterialDetailProtocols.swift */; };
+		7EF9A4A4251BC5B20085A5BC /* MaterialDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF9A4A3251BC5B20085A5BC /* MaterialDetailPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +64,7 @@
 		68E234002CA926B69EBEEBDC /* Pods_MVPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E0FE2542515ECD0006370D7 /* BottomOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomOverlay.swift; sourceTree = "<group>"; };
 		7E0FE2562515ED06006370D7 /* BottomOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomOverlayView.xib; sourceTree = "<group>"; };
+		7E28A7C1251B06A000426642 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		7E5465812514DBB000A16612 /* MVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E5465842514DBB000A16612 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E5465862514DBB000A16612 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +96,13 @@
 		7EABA51C2516479500E88C29 /* MVPTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MVPTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		7EABA51D2516479600E88C29 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		7EABA5E225167BC500E88C29 /* MainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
+		7EF9A496251BA8EC0085A5BC /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		7EF9A498251BB7030085A5BC /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
+		7EF9A49A251BC1060085A5BC /* RawMaterialResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMaterialResponse.swift; sourceTree = "<group>"; };
+		7EF9A49D251BC4800085A5BC /* MaterialDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaterialDetailView.xib; sourceTree = "<group>"; };
+		7EF9A49F251BC48E0085A5BC /* MaterialDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDetailView.swift; sourceTree = "<group>"; };
+		7EF9A4A1251BC51D0085A5BC /* MaterialDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDetailProtocols.swift; sourceTree = "<group>"; };
+		7EF9A4A3251BC5B20085A5BC /* MaterialDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialDetailPresenter.swift; sourceTree = "<group>"; };
 		889F7008B6AA6C547C7D3197 /* Pods-MVP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVP.debug.xcconfig"; path = "Target Support Files/Pods-MVP/Pods-MVP.debug.xcconfig"; sourceTree = "<group>"; };
 		ED62A0111262FE87112ABF5E /* Pods-MVPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPTests.debug.xcconfig"; path = "Target Support Files/Pods-MVPTests/Pods-MVPTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,6 +254,9 @@
 			children = (
 				7EABA4952515FFB900E88C29 /* ErrorResponse.swift */,
 				7EABA4A32516175D00E88C29 /* StoresResponse.swift */,
+				7E28A7C1251B06A000426642 /* UserResponse.swift */,
+				7EF9A496251BA8EC0085A5BC /* AuthResponse.swift */,
+				7EF9A49A251BC1060085A5BC /* RawMaterialResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -247,6 +266,7 @@
 			children = (
 				7E90237C2515C32A00AE1335 /* Component */,
 				7E5465DB2514F46900A16612 /* AppSetting.swift */,
+				7EF9A498251BB7030085A5BC /* AppContext.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -282,6 +302,7 @@
 		7EABA49C25160C1200E88C29 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7EF9A49C251BC4650085A5BC /* MaterialDetail */,
 				7EABA5112516362300E88C29 /* Material */,
 				7E5465A62514DCA800A16612 /* Login */,
 				7EABA49725160B6A00E88C29 /* Main */,
@@ -298,6 +319,17 @@
 				7EABA5182516377600E88C29 /* MaterialPresenter.swift */,
 			);
 			path = Material;
+			sourceTree = "<group>";
+		};
+		7EF9A49C251BC4650085A5BC /* MaterialDetail */ = {
+			isa = PBXGroup;
+			children = (
+				7EF9A49D251BC4800085A5BC /* MaterialDetailView.xib */,
+				7EF9A49F251BC48E0085A5BC /* MaterialDetailView.swift */,
+				7EF9A4A1251BC51D0085A5BC /* MaterialDetailProtocols.swift */,
+				7EF9A4A3251BC5B20085A5BC /* MaterialDetailPresenter.swift */,
+			);
+			path = MaterialDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF9A49E251BC4800085A5BC /* MaterialDetailView.xib in Resources */,
 				7E54658E2514DBB200A16612 /* Assets.xcassets in Resources */,
 				7EABA49B25160B8F00E88C29 /* MainView.xib in Resources */,
 				7EABA515251636B600E88C29 /* MaterialView.xib in Resources */,
@@ -499,17 +532,24 @@
 				7EABA5172516372C00E88C29 /* MaterialProtocols.swift in Sources */,
 				7E5465DC2514F46900A16612 /* AppSetting.swift in Sources */,
 				7EABA4962515FFB900E88C29 /* ErrorResponse.swift in Sources */,
+				7EF9A4A4251BC5B20085A5BC /* MaterialDetailPresenter.swift in Sources */,
+				7EF9A4A0251BC48E0085A5BC /* MaterialDetailView.swift in Sources */,
 				7E9022A325152C6500AE1335 /* LoginPresenter.swift in Sources */,
 				7E5465B12514E04C00A16612 /* LoginService.swift in Sources */,
 				7E5465B42514E24300A16612 /* LoginRequest.swift in Sources */,
 				7E9022A12515278100AE1335 /* LoginProtocols.swift in Sources */,
 				7EABA4A02516144700E88C29 /* MainPresenter.swift in Sources */,
 				7EABA4A22516168B00E88C29 /* StoreService.swift in Sources */,
+				7EF9A499251BB7030085A5BC /* AppContext.swift in Sources */,
+				7EF9A49B251BC1060085A5BC /* RawMaterialResponse.swift in Sources */,
 				7E5465852514DBB000A16612 /* AppDelegate.swift in Sources */,
 				7E5465872514DBB000A16612 /* SceneDelegate.swift in Sources */,
 				7E90237E2515C41100AE1335 /* UILoadingView.swift in Sources */,
 				7EABA4A42516175D00E88C29 /* StoresResponse.swift in Sources */,
+				7EF9A4A2251BC51D0085A5BC /* MaterialDetailProtocols.swift in Sources */,
 				7E0FE2552515ECD0006370D7 /* BottomOverlay.swift in Sources */,
+				7EF9A497251BA8EC0085A5BC /* AuthResponse.swift in Sources */,
+				7E28A7C2251B06A000426642 /* UserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,8 +605,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development: Wilson Lau (N2YZFVL4AJ)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7C5D84864H;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -625,8 +668,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development: Wilson Lau (N2YZFVL4AJ)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 7C5D84864H;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -652,15 +698,18 @@
 			baseConfigurationReference = 889F7008B6AA6C547C7D3197 /* Pods-MVP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = TasteLab;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 7C5D84864H;
 				INFOPLIST_FILE = MVP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.playground.MVP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.playground.mvp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -671,15 +720,18 @@
 			baseConfigurationReference = 44A6AA9A273D4ECA6C30782D /* Pods-MVP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = TasteLab;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 7C5D84864H;
 				INFOPLIST_FILE = MVP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.playground.MVP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.playground.mvp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -692,7 +744,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 7C5D84864H;
 				INFOPLIST_FILE = MVPTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -702,6 +755,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.playground.MVPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MVPTests/MVPTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -717,7 +772,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 7C5D84864H;
 				INFOPLIST_FILE = MVPTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -727,6 +783,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.playground.MVPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MVPTests/MVPTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

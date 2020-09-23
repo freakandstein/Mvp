@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+class MaterialDetailPresenter: MaterialDetailViewToPresenter {
+    var view: MaterialDetailPresenterToView?
+    
+}
